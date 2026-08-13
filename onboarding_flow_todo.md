@@ -1,0 +1,32 @@
+# Onboarding Flow Todo List
+
+- `[x]` Phase 1: Setup Infrastructure (Docker Compose)
+  - `[x]` Thêm PostgreSQL, Redis, RabbitMQ
+  - `[x]` Thêm MinIO, Elasticsearch
+  - `[x]` Thêm cụm Temporal (Temporal Server, Temporal UI)
+- `[x]` Phase 2: Scaffold Core Services
+  - `[x]` Tạo `risk-service`, `account-service`, `card-service`, `loyalty-service`
+  - `[x]` Cấu hình `pom.xml`, đổi tên package, đổi Port
+- `[x]` Phase 3: Setup Internal Service Key (Bảo mật)
+  - `[x]` Cấu hình `InternalServiceAuthUtils` tại `shared-kernel`
+  - `[x]` Viết Filter/Interceptor bắt các request bắt đầu bằng `/api/internal/`
+- `[ ]` Phase 4: Cấu hình Temporal SDK cho Spring Boot
+  - `[ ]` Thêm dependency `temporal-sdk` vào `pom.xml` của các module liên quan
+  - `[ ]` Viết Config class để kết nối tới `temporal:7233`
+- `[ ]` Phase 5: Implement Temporal Activities (Worker)
+  - `[ ]` `risk-service`: Viết `CheckRiskActivityImpl`
+  - `[ ]` `customer-service`: Viết `CreateCifActivityImpl`, `DeleteCifActivityImpl`
+  - `[ ]` `auth-service`: Viết `CreateUserAuthActivityImpl`
+  - `[ ]` `account-service`: Viết `CreateAccountActivityImpl`
+  - `[ ]` `card-service`: Viết `IssueCardActivityImpl`
+  - `[ ]` `loyalty-service`: Viết `RewardLoyaltyActivityImpl`
+  - `[ ]` `notification-service`: Viết `SendSmsActivityImpl`
+- `[ ]` Phase 6: Implement Temporal Workflow (Nhạc trưởng)
+  - `[ ]` `customer-service`: Viết `OnboardingWorkflow` interface và `OnboardingWorkflowImpl`
+  - `[ ]` Định nghĩa logic Rollback (Saga Compensation)
+  - `[ ]` Thực thi Async/Parallel execution cho các dịch vụ tài chính
+- `[ ]` Phase 7: REST API cho Frontend
+  - `[ ]` `customer-service`: Viết `POST /api/v1/onboarding`
+  - `[ ]` Nhận Request, validate
+  - `[ ]` Kích hoạt Workflow, trả về `workflowId` (Status 202)
+  - `[ ]` Viết API Get Status cho FE polling

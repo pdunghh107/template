@@ -1,0 +1,17 @@
+server:
+  port: 9094
+
+spring:
+  application:
+    name: notification-service
+
+  # RabbitMQ
+  rabbitmq:
+    host: ${RABBITMQ_HOST:rabbitmq}
+    port: ${RABBITMQ_PORT:5672}
+    username: ${RABBITMQ_USER:template_dev}
+    password: ${RABBITMQ_PASSWORD:template_dev_mq}
+
+app:
+  internal:
+    service-key: ${APP_INTERNAL_SERVICE_KEY:dev-internal-key}

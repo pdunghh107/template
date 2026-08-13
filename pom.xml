@@ -24,6 +24,13 @@
     <modules>
         <module>shared-kernel</module>
         <module>auth-service</module>
+        <module>customer-service</module>
+        <module>hr-service</module>
+        <module>notification-service</module>
+        <module>risk-service</module>
+        <module>account-service</module>
+        <module>card-service</module>
+        <module>loyalty-service</module>
     </modules>
 
     <!-- 2. PROPERTIES: Bảng điều khiển version tập trung -->

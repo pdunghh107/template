@@ -13,7 +13,7 @@ public final class RequestContext {
         USER_ID.set(userId);
     }
 
-    public UUID getUserId() {
+    public static UUID getUserId() {
         return USER_ID.get();
     }
 
