@@ -1,0 +1,84 @@
+### PDunghh-Finn (BIDV Clone) & Agent Folders ###
+.agents/
+skills/
+plan/
+ba/
+
+### Java / Maven Build Artifacts ###
+target/
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+*.zip
+*.tar.gz
+*.rar
+hs_err_pid*
+
+### Spring Boot / Application ###
+application-local.properties
+application-local.yml
+application-dev.properties
+application-dev.yml
+application-prod.properties
+application-prod.yml
+
+### Environment & Secrets ###
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.jks
+secrets/
+
+### Logs ###
+*.log
+logs/
+log/
+
+### IDE - IntelliJ IDEA ###
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+### IDE - Eclipse / STS ###
+.classpath
+.project
+.settings/
+.springBeans
+.sts4-cache/
+bin/
+
+### IDE - VS Code ###
+.vscode/
+!.vscode/extensions.json
+
+### IDE - NetBeans ###
+nbproject/private/
+nbbuild/
+nbdist/
+nbactions.xml
+.nb-gradle/
+
+### OS Files ###
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+### Docker ###
+docker-compose.override.yml
+
+### Maven Wrapper Exceptions ###
+# Mặc dù đưa cấu hình Line Ending sang .gitattributes, 
+# nhưng ta vẫn CẦN giữ ngoại lệ này ở đây vì ở trên ta đã ignore "*.jar" (dòng 9) và "*.properties"
+# Nếu bỏ 2 dòng này, Git sẽ bỏ qua file maven-wrapper.jar và team member khác pull code về sẽ không chạy được maven wrapper.
+!.mvn/wrapper/maven-wrapper.jar
+!.mvn/wrapper/maven-wrapper.properties

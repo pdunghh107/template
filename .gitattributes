@@ -1,0 +1,14 @@
+# Auto-detect text files and normalize to LF
+* text=auto
+
+# Explicitly declare text files you want to always be normalized and converted
+# to native line endings on checkout.
+*.java text
+*.xml text
+*.yml text
+*.properties text
+*.md text
+
+# Maven Wrapper
+/mvnw text eol=lf
+*.cmd text eol=crlf
